@@ -1,0 +1,19 @@
+@use "./../globals/" as *;
+
+.c-heading-primary {
+  font-family: var(--font-family-emphasis);
+  font-weight: 700;
+  line-height: 1.55;
+  @include pc {
+    font-size: calc(32 * var(--rem-ratio));
+  }
+  @include sp {
+    font-size: calc(24 * var(--rem-ratio));
+  }
+  &.c-heading-primary--center {
+    text-align: center;
+  }
+  &.c-heading-primary--color-white {
+    color: var(--color-font-white);
+  }
+}

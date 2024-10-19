@@ -1,0 +1,34 @@
+@use "./../globals/" as *;
+
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-font-white);
+  background-color: var(--color-bg-button-light-blue);
+  border-radius: 7px;
+  transition: background-color 0.3s;
+  @include pc {
+    font-size: calc(18 * var(--rem-ratio));
+  }
+  @include sp {
+    font-size: calc(16 * var(--rem-ratio));
+  }
+  &:hover {
+    background-color: var(--color-bg-button-light-blue-hover);
+  }
+  &.c-button--arrow {
+    &::after {
+      width: 10px;
+      height: 10px;
+      margin-left: 10px;
+      content: "";
+      border-top: 2px solid var(--color-font-white);
+      border-right: 2px solid var(--color-font-white);
+      transform: rotate(45deg);
+    }
+  }
+}

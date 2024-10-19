@@ -1,0 +1,48 @@
+@use "./../globals/" as *;
+
+.course {
+  @include pc {
+    padding-block: 80px;
+  }
+  @include sp {
+    padding-block: 40px;
+  }
+}
+
+.course__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  @include pc {
+    margin-top: 80px;
+  }
+  @include sp {
+    margin-top: 40px;
+  }
+}
+
+.course__item {
+  display: flex;
+  row-gap: 20px;
+  @include pc {
+    column-gap: 56px;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+  @include sp {
+    flex-direction: column;
+  }
+}
+
+.course__copy {
+  margin-top: 20px;
+}
+
+.course__image {
+  text-align: center;
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
