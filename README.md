@@ -271,6 +271,12 @@ npm run sass
 
 # コミットテンプレートの使い方
 
+gitコマンドでテンプレートに設定します。
+
+```bash
+git config --local commit.template .commit_template
+```
+
 下記コマンドでファイルをすべてインデックスに登録します。
 
 ```bash
@@ -288,25 +294,46 @@ git commit
 ```bash
 # ==== Commit Messages ====
 :tada: 初めてのコミット # ここにコミットメッセージを書く
-# ==================== Format ====================
-# :emoji: #Issue Subject
-#
-# Commit body...
-# ==================== Emojis ====================
-# 🎉  :tada: 初めてのコミット（Initial Commit）
-# 🔖  :bookmark: バージョンタグ（Version Tag）
-# ✨  :sparkles: 新機能（New Feature）
-# 🐛  :bug: バグ修正（Bugfix）
-# 💄  :lipstick: スタイル修正 (Add or update the UI and style files)
-# ✒   :pencil2: タイプミス修正 (Fix typos)
-# ♻️   :recycle: リファクタリング(Refactoring)
-# 📚  :books: ドキュメント（Documentation）
-# 🎨  :art: デザインUI/UX(Accessibility)
-# 🐎  :horse: パフォーマンス（Performance）
-# 🔧  :wrench: ツール（Tooling）
-# 🚨  :rotating_light: テスト（Tests）
-# 🔥  :fire: コード・ファイルの削除 (Remove code or files (Remove code or files.)
-# 🚧  :construction: WIP(Work In Progress)
+# ==== Commit Messages(Template) ====
+# :emoji: #Issue番号 変更内容
+# 例) :+1: #438 コメント追加
+#       👍 #438 コメント追加
+# ==== Prefix ====
+# :fix: バグ修正
+# :hotfix: クリティカルなバグ修正
+# :add: 新規機能・新規ファイル追加
+# :feat: feature
+# :update: バグではない機能修正
+# :change: 仕様変更による機能修正
+# :docs: ドキュメントのみ修正
+# :disable: 無効化
+# :remove(delete): ファイル削除、コードの一部を取り除く
+# :rename: ファイル名の変更
+# :upgrade: バージョンアップ
+# :revert: 修正取り消し
+# :style: 空白、セミコロン、行、コーディングフォーマットなどの修正
+# :refactor(clean,improve): リファクタリング
+# :test: テスト追加や間違っていたテストの修正
+# :chore: ビルドツールやライブラリで自動生成されたものをコミットするとき
+
+# ==== Emojis ====
+# 🎉  :tada: 初めてのコミット
+# 🐛  :bug: バグ修正
+# 👍  :+1: 機能改善
+# ✨  :sparkles: 部分的な機能追加
+# 🎨  :art: デザイン変更のみ
+# 💢  :anger: コンフリクト
+# 🚧  :construction: WIP
+# 📝  :memo: 文言修正
+# ♻️  :recycle: リファクタリング
+# 🔥  :fire: 不要な機能・使われなくなった機能の削除
+# 💚  :green_heart: テストやCIの修正・改善
+# 👕  :shirt: Lintエラーの修正やコードスタイルの修正
+# 🚀  :rocket: パフォーマンス改善
+# 🆙  :up: 依存パッケージなどのアップデート
+# 👮  :cop: セキュリティ関連の改善
+# ⚙   :gear: config変更
+# 📚  :books: ドキュメント
 
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
@@ -512,3 +539,17 @@ src/pages/
 ├── cart.html
 └── index.html # トップページ
 ```
+
+# npm scripts(npm run …)
+
+| scripts | 説明 |
+| --- | --- |
+| prebuild | ビルド前に実行。dist ディレクトリを削除。 |
+| dev | 開発サーバーを起動。 |
+| build | ビルドを実行。dist ディレクトリを生成し、生成した HTML を prettier で整形。 |
+| production | ビルドを実行し、HTML を minify。 |
+| preview | ビルド結果をプレビュー。 |
+| format-html | dist ディレクトリの HTML ファイルを prettier で整形。 |
+| sass | scssを保存すると自動でコンパイルされる。 |
+| storybook | storybookを起動。 |
+| build-storybook | storybook-static ディレクトリに Storybook が静的サイトとして出力。 |
