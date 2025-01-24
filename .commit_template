@@ -1,42 +1,31 @@
 # ==== Commit Messages ====
 
-# ==== Commit Messages(Template) ====
-# :emoji: #Issue番号 変更内容
-# 例) :+1: #438 コメント追加
-#       👍 #438 コメント追加
-# ==== Prefix ====
-# :fix: バグ修正
-# :hotfix: クリティカルなバグ修正
-# :add: 新規機能・新規ファイル追加
-# :feat: feature
-# :update: バグではない機能修正
-# :change: 仕様変更による機能修正
-# :docs: ドキュメントのみ修正
-# :disable: 無効化
-# :remove(delete): ファイル削除、コードの一部を取り除く
-# :rename: ファイル名の変更
-# :upgrade: バージョンアップ
-# :revert: 修正取り消し
-# :style: 空白、セミコロン、行、コーディングフォーマットなどの修正
-# :refactor(clean,improve): リファクタリング
-# :test: テスト追加や間違っていたテストの修正
-# :chore: ビルドツールやライブラリで自動生成されたものをコミットするとき
+# ==== Format ====
+# <Type>: #<Issue Number> <Title>
+#
+# <Description>
 
-# ==== Emojis ====
-# 🎉  :tada: 初めてのコミット
-# 🐛  :bug: バグ修正
-# 👍  :+1: 機能改善
-# ✨  :sparkles: 部分的な機能追加
-# 🎨  :art: デザイン変更のみ
-# 💢  :anger: コンフリクト
-# 🚧  :construction: WIP
-# 📝  :memo: 文言修正
-# ♻️  :recycle: リファクタリング
-# 🔥  :fire: 不要な機能・使われなくなった機能の削除
-# 💚  :green_heart: テストやCIの修正・改善
-# 👕  :shirt: Lintエラーの修正やコードスタイルの修正
-# 🚀  :rocket: パフォーマンス改善
-# 🆙  :up: 依存パッケージなどのアップデート
-# 👮  :cop: セキュリティ関連の改善
-# ⚙   :gear: config変更
-# 📚  :books: ドキュメント
+# ==== Type ====
+# feat:     新しい機能の実装 (例：ログイン機能の実装)
+# fix:      軽微な修正、バグ修正 (例：ログイン機能のバグ修正)
+# remove:   実装した機能やファイルの削除 (例：ログイン機能の削除)
+# design:   デザインの変更 (例：CSSの変更)
+# docs:     ドキュメントの修正 (例：READMEの変更)
+# refactor: 実稼働コードのリファクタリング (例：変数名の変更)
+# chore:    プロジェクトの維持や管理のために必要な作業 (例：ライブラリの更新)
+
+# ==== Example ====
+# first commit
+# feat: #123 TOPICSに「お知らせ」バナーを追加
+# feat: #123 テキストの差し替え
+# feat: #123 イベントバナーの差し替え
+# fix: #123 マージン調整
+# fix: #123 誤字の修正
+# fix: #123 アコーディオンメニューが動かないのを修正
+# remove: #123 テキスト削除
+# remove: #123 「index_test.html」削除
+# design: #123 テキストの文字を大きくする
+# docs: コミットメッセージについて追記
+# refactor: コード整形
+# refactor: 「course/2025/」ディレクトリに移動
+# chore: Viteバージョンアップ
