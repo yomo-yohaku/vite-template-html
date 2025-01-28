@@ -2,12 +2,6 @@
 
 [https://](https://)
 
-# 開発環境
-
-- Visual Studio Code (VSCode)
-- Node.js v20.18.0
-- vite v5.4.8
-
 # VSCode拡張機能
 
 `.vscode/extensions.json` に推奨拡張機能を記載しています。
@@ -28,191 +22,14 @@
 
 ファイルパスを入力する際にディレクトリ名やファイル名を補完します。
 
-# VoltaからNode.jsをインストール
-
-Node.jsのバージョンを変更する度に、Node.jsをアンインストールしてから特定のバージョンを再インストールするのは大変なので、Volta等のバージョン管理ツールを使用すると便利です。
-
-※ Node.js公式から直接インストールする場合や他の管理ツールを使う場合は飛ばしてください
-
-## Node.jsが入っていないかを確認
-
-以下のコマンドでバージョンが出てこなければインストールされていません。
-
-```bash
-node -v
-```
-
-```bash
-npm -v
-```
-
-## Node.jsがインストールされている場合はアンインストール
-
-Node.js公式や他のNode.jsのバージョン管理ツールでインストールされている場合は、それぞれの方法でアンインストールします。方法が多いので説明は割愛します。
-
-## Voltaをインストールする
-
-### Mac
-
-Macのデフォルト`shell`は`zsh`ですが、`bash`,`zsh`,`fish`は全て以下のコマンドでインストールできます。
-
-```bash
-curl https://get.volta.sh | bash
-```
-
-### Windows
-
-Windowsの場合は、以下の公式ページの**Windows Installation**の指示に従ってインストールを行なってください。
-
-[Getting Started | Volta](https://docs.volta.sh/guide/getting-started)
-
-## Voltaがインストールされているか確認
-
-以下のコマンドでダウンロードしたバージョンが返ってきたら、成功です。
-
-※ 実行されない場合はVSCodeを再起動
-
-```bash
-volta -v
-```
-
-## Node.jsをインストール
-
-### 最新のLTS（安定版）をインストール（推奨）
-
-以下のコマンドを実行します。
-
-```bash
-volta install node
-```
-
-## Node.jsがインストールされているか確認
-
-以下のコマンドを実行します。
-
-```bash
-volta list all
-```
-
-下記が返ってきたら、成功です。
-
-```bash
-⚡️ User toolchain:
-
-    Node runtimes:
-        v20.18.0 (default)
-
-    Package managers:
-
-
-    Packages:
-```
-
-# ローカル環境にクローンする準備
-
-VSCodeのエクスプローラーから構築したいディレクトリを開きます。
-
-例：C:\Users\＜ユーザー名＞\Documents\\project
-
-VSCodeのターミナルで構築したいディレクトリに移動します。「cd 」までタイプし、エクスプローラー（Finder）からターミナルに目的のディレクトリをドラッグ&ドロップします。コピペでもOK。
-
-```bash
-cd ここに該当のディレクトリをドラッグ＆ドロップ
-
-# 例（''がなくても可）
-cd 'c:/Users/＜ユーザー名＞/Documents/project'
-```
-※ Windowsの場合は\（バックスラッシュ）を/（スラッシュ）に置き換える必要があります。（ドラッグ&ドロップだと自動で置き換わる）
-
-## ターミナルで開く場所を「VSCodeで開いてるディレクトリ」に設定
-
-設定しておくと毎回`cd`で移動しなくていいので便利です。
-
-1. VSCode左下の歯車マーク「管理」から「設定」をクリック。
-
-2. 設定タブが開き、右上のアイコン「設定（JSON）を開く」をクリックして`settings.json`に下記を追記。
-
-```json
-{
-  "terminal.integrated.cwd": "${workspaceFolder}"
-}
-```
-
-# ローカル環境にクローンする方法
-
-### クローンしたいリポジトリのGithubからURLを取得する
-
-Githubのリポジトリのトップページ > codeのボタン > HTTPS用のクローンURLをコピーします。
-
-### クローンを実施する
-
-コピーしたURLを用いて、以下コマンドを実行します。フォルダの名前を変更したい場合は、コマンドの末尾に設定したいフォルダ名を追加します。
-
-```bash
-git clone コピーしたGithubのURL
-
-# 例：クローンしたフォルダをtest_projectという名前に変更したい場合
-git clone コピーしたGithubのURL test_project
-
-# 例：クローンしたフォルダをtest_project/2024/に保存したい場合
-git clone コピーしたGithubのURL test_project/2024
-```
-
-### VSCodeのエクスプローラーを開き直す
-
-クローンしたフォルダをVSCodeで開き直します。ターミナルのディレクトリもクローンしたディレクトリが指定されているのを確認しましょう。されていない場合は`cd`コマンドで移動します。
-
-### ローカルブランチの確認
-
-`git branch`コマンドを実行すると、ローカルブランチの一覧が確認できます。（クローン後はデフォルトのブランチのみ反映されます）
-
-### リモートブランチをローカルブランチに反映
-
-1. `git fetch`で最新のリモートブランチを取得。
-
-```bash
-git fetch
-```
-
-2. `git branch -r`でリモートブランチを確認。
-
-```bash
-git branch -r
-```
-
-3. `git switch`で対象のブランチに切り替えつつ、リモートブランチをローカルに持ってくる。
-
-```bash
-git switch ＜対象のリモートブランチ＞
-
-#例：productionブランチをローカルに持っていきたい場合
-git switch production
-```
-
-4. `git branch`でローカルブランチに反映されているのを確認。
-
-```bash
-git branch
-
-# 例：コマンド実行後、下記が表示されます（*が付いているのは現在のブランチ）
-git branch
-  development
-* production
-```
-
-## 自身のリポジトリと紐付けをしたい場合
-
-クローンしたファイルはクローン元のリポジトリと紐づいている状態なので、自身のリポジトリと紐付けをしたい場合は以下のコマンドで.gitディレクトリを削除します。
-
-```bash
-rm -rf .git
-```
-
 # ローカルで開発を開始する
+
+## 前提条件
+- Node.jsがインストールされていること
 
 ### Viteをインストール
 
-以下のコマンドを実行してViteをインストールします。
+ローカル環境にクローン後、以下のコマンドを実行してViteをインストールします。（初回のみ）
 
 ```bash
 npm install vite
@@ -228,50 +45,27 @@ npm run dev
 
 ### ファイルのビルド
 
-1. ターミナルの右上の＋マークから「新しいターミナル」を追加します。
-2. 以下のコマンドでファイルがビルドされます。（distフォルダに格納）
+以下のコマンドでファイルがビルドされます。（distフォルダに格納）
 
 ```bash
 npm run build
 ```
 
-# 【2回目以降】ローカルで開発を開始する
+## 個別にSass（SCSS）ファイルをコンパイルしたい場合
 
-### 開発サーバを起動する
-
-以下のコマンドを実行すると開発サーバが起動します。表示されたリンクを`Ctrl + クリック`でページにアクセスできます。
-
-```bash
-npm run dev
-```
-
-### プッシュ前にファイルのビルド
-
-1. ターミナルの右上の＋マークから「新しいターミナル」を追加します。
-2. 以下コマンドを実行してプッシュ前にビルドをしましょう。変更されないと思ったらビルドを忘れてたりします。
-
-```bash
-npm run build
-```
-
-### 個別にSass（SCSS）ファイルをコンパイルしたい場合
-
-ビルド時に自動でSCSSファイルが`app-xxx.css`に変換されるようになっていますが、個別にCSSファイルを読み込みたい場合は以下を実行して個別にCSSファイルを書き出してください。
-
-1. ターミナルの右上の＋マークから「新しいターミナル」を追加します。
-2. 以下のコマンドを実行するとSassが起動して、ファイル保存時に自動でコンパイルされます。
-
-`src/assets/scss/previous/`ディレクトリにあるscssが`public/assets/css/`ディレクトリにcssで書き出されます。
-
-※ Sassを終了するには、`npm run Sass`を実行したターミナルで`Ctrl + c`を押します。
-
+ビルド時に自動でSCSSファイルが`app-xxx.css`に変換されるようになっていますが、個別にCSSファイルを読み込みたい場合は以下コマンドを実行して個別にCSSファイルを書き出してください。
+   
 ```bash
 npm run sass
 ```
 
+Sassが起動して、ファイル保存時に`src/assets/scss/previous/`ディレクトリにあるscssが`public/assets/css/`ディレクトリにcssで書き出されます。
+
+※ Sassを終了するには、`npm run Sass`を実行したターミナルで`Ctrl + c`を押します。
+
 # コミットテンプレートの使い方
 
-gitコマンドでテンプレートに設定します。
+gitコマンドでテンプレートに設定します。（初回のみ）
 
 ```bash
 git config --local commit.template .commit_template
@@ -289,64 +83,8 @@ git add .
 git commit
 ```
 
-#（ハッシュ）でコメントアウトされているFormatやEmojisを参考にコミットメッセージを書き、保存してファイルを閉じるとコミットされます。
+#（ハッシュ）でコメントアウトされているFormatを参考にコミットメッセージを書き、保存してファイルを閉じるとコミットされます。
 
-```bash
-# ==== Commit Messages ====
-:tada: 初めてのコミット # ここにコミットメッセージを書く
-# ==== Commit Messages(Template) ====
-# :emoji: #Issue番号 変更内容
-# 例) :+1: #438 コメント追加
-#       👍 #438 コメント追加
-# ==== Prefix ====
-# :fix: バグ修正
-# :hotfix: クリティカルなバグ修正
-# :add: 新規機能・新規ファイル追加
-# :feat: feature
-# :update: バグではない機能修正
-# :change: 仕様変更による機能修正
-# :docs: ドキュメントのみ修正
-# :disable: 無効化
-# :remove(delete): ファイル削除、コードの一部を取り除く
-# :rename: ファイル名の変更
-# :upgrade: バージョンアップ
-# :revert: 修正取り消し
-# :style: 空白、セミコロン、行、コーディングフォーマットなどの修正
-# :refactor(clean,improve): リファクタリング
-# :test: テスト追加や間違っていたテストの修正
-# :chore: ビルドツールやライブラリで自動生成されたものをコミットするとき
-
-# ==== Emojis ====
-# 🎉  :tada: 初めてのコミット
-# 🐛  :bug: バグ修正
-# 👍  :+1: 機能改善
-# ✨  :sparkles: 部分的な機能追加
-# 🎨  :art: デザイン変更のみ
-# 💢  :anger: コンフリクト
-# 🚧  :construction: WIP
-# 📝  :memo: 文言修正
-# ♻️  :recycle: リファクタリング
-# 🔥  :fire: 不要な機能・使われなくなった機能の削除
-# 💚  :green_heart: テストやCIの修正・改善
-# 👕  :shirt: Lintエラーの修正やコードスタイルの修正
-# 🚀  :rocket: パフォーマンス改善
-# 🆙  :up: 依存パッケージなどのアップデート
-# 👮  :cop: セキュリティ関連の改善
-# ⚙   :gear: config変更
-# 📚  :books: ドキュメント
-
-# Please enter the commit message for your changes. Lines starting
-# with '#' will be ignored, and an empty message aborts the commit.
-#
-# On branch main
-#
-# Initial commit
-#
-# Changes to be committed:
-#	new file:   .browserslistrc
-#	new file:   .editorconfig
-...
-```
 
 # 使用技術
 
