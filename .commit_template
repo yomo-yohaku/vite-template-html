@@ -1,0 +1,31 @@
+# ==== Commit Messages ====
+
+# ==== Format ====
+# <Type>: #<Issue Number> <Title>
+#
+# <Description>
+
+# ==== Type ====
+# feat:     新しい機能の実装 (例：ログイン機能の実装)
+# fix:      軽微な修正、バグ修正 (例：ログイン機能のバグ修正)
+# remove:   実装した機能やファイルの削除 (例：ログイン機能の削除)
+# design:   デザインの変更 (例：CSSの変更)
+# docs:     ドキュメントの修正 (例：READMEの変更)
+# refactor: 実稼働コードのリファクタリング (例：変数名の変更)
+# chore:    プロジェクトの維持や管理のために必要な作業 (例：ライブラリの更新)
+
+# ==== Example ====
+# first commit
+# feat: #123 TOPICSに「お知らせ」バナーを追加
+# feat: #123 テキストの差し替え
+# feat: #123 イベントバナーの差し替え
+# fix: #123 マージン調整
+# fix: #123 誤字の修正
+# fix: #123 アコーディオンメニューが動かないのを修正
+# remove: #123 テキスト削除
+# remove: #123 「index_test.html」削除
+# design: #123 テキストの文字を大きくする
+# docs: コミットメッセージについて追記
+# refactor: コード整形
+# refactor: 「course/2025/」ディレクトリに移動
+# chore: Viteバージョンアップ

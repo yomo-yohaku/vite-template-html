@@ -1,0 +1,11 @@
+@use "./../globals/" as *;
+
+.l-container {
+  width: var(--width-content);
+  margin: 0 auto;
+  &.l-container--s {
+    @include pc {
+      max-width: 800px;
+    }
+  }
+}

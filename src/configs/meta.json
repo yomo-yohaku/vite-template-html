@@ -1,0 +1,13 @@
+{
+  "/cart.html": {
+    "pageTitle": "ショッピングカート",
+    "description": "ショッピングカートページの説明文です。",
+    "ogp": {
+      "type": "article",
+      "image": "/images/ogp.jpg"
+    },
+    "twitter": {
+      "card": "summary"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+// 全ページで適用されるスタイル
+@use "@/base" as *;
+@use "@/components" as *;
+@use "@/utils" as *;
+@use "@/layouts" as *;
+
+// 特定の機能でのみ必要となるスタイル
+@use "@/features" as *;
+
+// 各ページ専用のスタイル
+@use "@/pages/" as *;

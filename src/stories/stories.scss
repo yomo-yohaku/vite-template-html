@@ -1,0 +1,12 @@
+.sb-story div > *:not(:first-child) {
+  margin-top: 16px;
+}
+
+#storybook-root > *:not(:first-child) {
+  margin-top: 16px;
+}
+
+.bg-black {
+  padding: 8px;
+  background-color: #000;
+}

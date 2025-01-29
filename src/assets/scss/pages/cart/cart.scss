@@ -1,0 +1,50 @@
+@use "./../../globals/" as *;
+
+.cart__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.cart__item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+
+  @include pc {
+    grid-template-columns: 200px 1fr;
+  }
+
+  &.cart__item--button {
+    @include pc {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.cart__item-label {
+  font-weight: bold;
+}
+
+.cart__item-text {
+  input,
+  select {
+    height: 45px;
+
+    @include pc {
+      height: 48px;
+    }
+  }
+}
+
+.cart__item-textarea {
+  textarea {
+    height: 200px;
+  }
+}
+
+.cart__button {
+  display: flex;
+  justify-content: center;
+}

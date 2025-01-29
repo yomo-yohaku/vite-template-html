@@ -1,0 +1,53 @@
+@use "./../globals/" as *;
+
+.footer {
+  @include pc {
+    padding: 64px 0 24px;
+  }
+  @include sp {
+    padding: 40px 0 24px;
+    text-align: center;
+  }
+}
+
+.footer__inner {
+  @include pc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footer__list {
+  display: flex;
+  gap: 8px;
+  @include sp {
+    flex-direction: column;
+  }
+}
+
+.footer__item {
+  font-size: calc(14 * var(--rem-ratio));
+  opacity: 0.7;
+  &:not(:first-child) {
+    &::before {
+      @include pc {
+        padding: 0 8px;
+        content: "/";
+      }
+    }
+  }
+}
+
+.footer__copyright {
+  display: block;
+  font-size: calc(14 * var(--rem-ratio));
+  opacity: 0.7;
+  @include pc {
+    flex-shrink: 0;
+    margin-left: 120px;
+  }
+  @include sp {
+    margin-top: 8px;
+  }
+}

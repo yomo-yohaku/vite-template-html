@@ -1,0 +1,57 @@
+@use "./../../globals/" as *;
+
+.top-hero {
+  position: relative;
+  z-index: 1;
+  @include pc {
+    padding-top: 60px;
+  }
+  @include sp {
+    padding-top: 20px;
+  }
+}
+.top-hero__inner {
+  display: flex;
+  column-gap: 50px;
+  @include pc {
+    padding-inline: 40px;
+  }
+  @include sp {
+    flex-direction: column;
+  }
+  > * {
+    flex: 1;
+  }
+}
+.top-hero__body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.top-hero__title {
+  font-family: var(--font-family-emphasis);
+  font-weight: 700;
+  line-height: 1.55;
+  @include pc {
+    font-size: clamp-vw(30, 36, 768, 1200);
+  }
+  @include sp {
+    font-size: calc(32 * var(--rem-ratio));
+  }
+}
+.top-hero__subtitle {
+  font-family: var(--font-family-emphasis);
+  font-weight: 700;
+  line-height: 1.55;
+  @include pc {
+    font-size: clamp-vw(16, 24, 768, 1200);
+  }
+  @include sp {
+    font-size: calc(16 * var(--rem-ratio));
+  }
+}
+.top-hero__image {
+  @include sp {
+    margin-top: 30px;
+  }
+}

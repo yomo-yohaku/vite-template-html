@@ -1,0 +1,49 @@
+@use "./../globals/" as *;
+
+:root {
+  // カラー
+  --color-bg-white: #fff;
+  --color-bg-black: #453732;
+  --color-bg-pink: #eba58d;
+  --color-bg-quartz: #e0e2ed;
+  --color-bg-button-light-blue: #a0b9e0;
+  --color-bg-button-light-blue-hover: #b8cded;
+  --color-border-white: #fff;
+  --color-border-gray: #dddddd;
+  --color-icon-black: #453732;
+  --color-font-black: #453732;
+  --color-font-white: #fff;
+  --color-logo-black: #453732;
+
+  // コンテナ幅
+  --width-content: min(90%, 1080px);
+
+  // フォント
+  --font-family-base: "Noto Sans JP", sans-serif;
+  --font-family-emphasis: "Zen Maru Gothic", "Noto Sans JP", sans-serif;
+
+  // rem
+  --font-size-base: 16;
+  --rem-ratio: calc(1rem / var(--font-size-base));
+}
+
+html {
+  background-color: var(--color-bg-white);
+}
+
+body {
+  font-family: var(--font-family-base);
+  line-height: 1.75;
+  color: var(--color-font-black);
+  @include pc {
+    font-size: calc(16 * var(--rem-ratio));
+  }
+  @include sp {
+    font-size: calc(14 * var(--rem-ratio));
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
