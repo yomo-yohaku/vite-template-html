@@ -1,6 +1,6 @@
 # サンプルページ
 
-[https://](https://)
+https://yomo-yohaku.github.io/vite-template-html/
 
 # VSCode拡張機能
 
