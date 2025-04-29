@@ -12,7 +12,8 @@
     "format-html": "prettier --write dist/**/*.html",
     "sass": "sass src/assets/scss/previous/:public/assets/css/ --watch",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "git": "git add . && git commit && git push origin main"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",

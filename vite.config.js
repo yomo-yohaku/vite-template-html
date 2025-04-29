@@ -33,7 +33,9 @@ export default defineConfig(async () => {
 
   return {
     root: root,
-    base: "/",
+    base: process.env.GITHUB_PAGES
+    ? "reactailwind"
+    : "./",
     publicDir: resolve(__dirname, "public"),
     css: {
       preprocessorOptions: {
